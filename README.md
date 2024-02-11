@@ -9,23 +9,23 @@
 
 ## 1 - Update the database data in your .env file, for example:
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel_api_jwt_auth_users_crud
-DB_USERNAME=root
-DB_PASSWORD=
+DB_CONNECTION=mysql<BR>
+DB_HOST=127.0.0.1<BR>
+DB_PORT=3306<BR>
+DB_DATABASE=laravel_api_jwt_auth_users_crud<BR>
+DB_USERNAME=root<BR>
+DB_PASSWORD=<BR>
 
 ## 2 - RUN:
-1 - composer install
-2 - php artisan migrate
-3 - php artisan jwt:secret
-4 - php artisan serve --port=80 (you can choose the port or not pass the port parameter then it will run on the default port)
+1 - composer install<BR>
+2 - php artisan migrate<BR>
+3 - php artisan jwt:secret<BR>
+4 - php artisan serve --port=80 (you can choose the port or not pass the port parameter then it will run on the default port)<BR>
 
 ## 3 - ROUTE LIST
-to see the list of routes run:
-php artisan route:list
-
+to see the list of routes run:<BR>
+php artisan route:list<BR>
+<code>
 | Domain | Method   | URI                   | Name | Action                                                     | Middleware            
                |
 +--------+----------+-----------------------+------+------------------------------------------------------------+--------------------------------------+
@@ -54,48 +54,49 @@ php artisan route:list
 |        |          |                       |      |                                                            | App\Http\Middleware\Authenticate:api |
 |        | GET|HEAD | sanctum/csrf-cookie   |      | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                  |
 +--------+----------+-----------------------+------+------------------------------------------------------------+--------------------------------------+
-
-api/register
-BODY:
-{
-	"email": "your@email.com",
-	"name": "Your Name",
-	"password": "yourpassword"
-}
-WILL RETURN A TOKEN
-"auth": {
-		"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xL2FwaS9sb2dpbiIsImlhdCI6MTcwNzIyNzQ1OSwiZXhwIjoxNzA3MjMxMDU5LCJuYmYiOjE3MDcyMjc0NTksImp0aSI6IldFWkdVV21qczdnS2hnWHciLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.QH6jDiA1m_E01uw2C_gqKi7ivWxll7-ll5XscA-NVHU",
-		"type": "bearer"
-	}
-
-api/login
-BODY:
-{
-	"email": "your@email.com",
-	"password": "yourpassword"
-}
-WILL RETURN A TOKEN
-"auth": {
-		"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xL2FwaS9sb2dpbiIsImlhdCI6MTcwNzIyNzQ1OSwiZXhwIjoxNzA3MjMxMDU5LCJuYmYiOjE3MDcyMjc0NTksImp0aSI6IldFWkdVV21qczdnS2hnWHciLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.QH6jDiA1m_E01uw2C_gqKi7ivWxll7-ll5XscA-NVHU",
-		"type": "bearer"
-	}
-
-FOR ALL OTHER ENDPOINTS, USE THE TOKEN RETURNED AT LOGIN IN THE HEAD:
-Bearer Token:
-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xL2FwaS9sb2dpbiIsImlhdCI6MTcwNzIyNzQ1OSwiZXhwIjoxNzA3MjMxMDU5LCJuYmYiOjE3MDcyMjc0NTksImp0aSI6IldFWkdVV21qczdnS2hnWHciLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.QH6jDiA1m_E01uw2C_gqKi7ivWxll7-ll5XscA-NVHU
-
-api/user/store
-BODY:
-{
-	"name": "Your Dog",
-	"email": "yourdog@email.com",
-	"password" : "yourdogspassword"
-}
-
-api/user/update
-BODY:
-{
-	"id": 2,
-	"name": "Your Dogs name",
-	"email": "yourdogsname@email.com"
+</code>
+<BR>
+api/register<BR>
+BODY:<BR>
+{<BR>
+	"email": "your@email.com",<BR>
+	"name": "Your Name",<BR>
+	"password": "yourpassword"<BR>
+}<BR>
+WILL RETURN A TOKEN<BR>
+"auth": {<BR>
+		"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.<BR>eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xL2FwaS9sb2dpbiIsImlhdCI6MTcwNzIyNzQ1OSwiZXhwIjoxNzA3MjMxMDU5LCJuYmYiOjE3MDcyMjc0NTksImp0aSI6IldFWkdVV21qczdnS2hnWHciLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.QH6jDiA1m_E01uw2C_gqKi7ivWxll7-ll5XscA-NVHU",<BR>
+		"type": "bearer"<BR>
+	}<BR>
+<BR>
+api/login<BR>
+BODY:<BR>
+{<BR>
+	"email": "your@email.com",<BR>
+	"password": "yourpassword"<BR>
+}<BR>
+WILL RETURN A TOKEN<BR>
+"auth": {<BR>
+		"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.<BR>eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xL2FwaS9sb2dpbiIsImlhdCI6MTcwNzIyNzQ1OSwiZXhwIjoxNzA3MjMxMDU5LCJuYmYiOjE3MDcyMjc0NTksImp0aSI6IldFWkdVV21qczdnS2hnWHciLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.QH6jDiA1m_E01uw2C_gqKi7ivWxll7-ll5XscA-NVHU",<BR>
+		"type": "bearer"<BR>
+	}<BR>
+<BR>
+FOR ALL OTHER ENDPOINTS, USE THE TOKEN RETURNED AT LOGIN IN THE HEAD:<BR>
+Bearer Token:<BR>
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.<BR>eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xL2FwaS9sb2dpbiIsImlhdCI6MTcwNzIyNzQ1OSwiZXhwIjoxNzA3MjMxMDU5LCJuYmYiOjE3MDcyMjc0NTksImp0aSI6IldFWkdVV21qczdnS2hnWHciLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.QH6jDiA1m_E01uw2C_gqKi7ivWxll7-ll5XscA-NVHU<BR>
+<BR>
+api/user/store<BR>
+BODY:<BR>
+{<BR>
+	"name": "Your Dog",<BR>
+	"email": "yourdog@email.com",<BR>
+	"password" : "yourdogspassword"<BR>
+}<BR>
+<BR>
+api/user/update<BR>
+BODY:<BR>
+{<BR>
+	"id": 2,<BR>
+	"name": "Your Dogs name",<BR>
+	"email": "yourdogsname@email.com"<BR>
 }
