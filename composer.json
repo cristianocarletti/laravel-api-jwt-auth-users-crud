@@ -1,7 +1,5 @@
 {
-    "name": "laravel-api-jwt-auth-users-crud",
     "type": "project",
-    "description": "Laravel API with JWT authentication and users CRUD",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
